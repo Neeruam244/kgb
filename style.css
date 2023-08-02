@@ -1,0 +1,90 @@
+/*  --- Page missions.php ---    */
+.card-body{
+    padding: 30px;
+}
+.card-title{
+    margin: 10px;
+    font-size: 20px;
+    font-weight: bold;
+}
+.card-title{
+    text-align: center;
+}
+.card-text
+.card-info{
+    margin-left: 20px;
+}
+
+/*  --- Page login.php ---   */
+.container{
+    margin-bottom: 50px;
+}
+.contain-form{
+    width: 30%;
+}
+#title{
+    text-align: center;
+    font-size: 35px;
+    padding-bottom: 20px;
+}
+input{
+    margin: 15px;
+}
+label{
+    margin-left: 10px;
+}
+
+/*  --- Page bo admin ---   */
+.title-bo{
+    text-align: center;
+    margin-bottom: 20px;
+}
+.btndeco{
+    margin-right: 120px;
+}
+.tableaux{
+    margin: 20px;
+    margin-bottom: 10px;
+}
+table{
+    display: inline-table;
+    vertical-align: top;
+}
+table,
+thead,
+th,
+td{
+    margin: 30px 50px 0 50px;
+    width: 40%; 
+    border: 1px solid #21211f;
+    border-collapse: collapse;
+    height: 25px;
+    padding: 5px;
+    text-align : center;
+}
+.inprep{
+    background: #a1c181;
+}
+.inprogress{
+    background : #86bbd8;
+}
+.ended{
+    background: #f4a261;
+}
+.failure{
+    background: #c81d25;
+}
+.codeagent{
+    background : #e0b1cb;
+}
+.codecontact{
+    background: #c7f9cc;
+}
+.codecible{
+    background: #cad2c5;
+}
+@media screen and (min-width: 1600px){
+    .btndeco{
+        margin-right: 320px;
+    }
+}
