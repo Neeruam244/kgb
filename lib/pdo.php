@@ -2,9 +2,9 @@
 
 // Paramètres de connexion à la base de données
 $dbHost = 'localhost';
-$dbName = '_DB_NAME_';
-$dbUser = '_DB_USER_';
-$dbPass = '_DB_PASSWORD_';
+$dbName = 'kgb';
+$dbUser = 'root';
+$dbPass = '';
 
 // Initialisation de la connexion PDO
 try {
