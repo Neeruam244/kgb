@@ -4,7 +4,8 @@ namespace App\Entity;
 
 class Missions
 {
-    protected ?int $id_missions = null;
+    protected ?int $id_mission = null;
+    protected int $id_admin;
     protected string $title;
     protected string $description;
     protected string $name_code_mission;
@@ -15,22 +16,45 @@ class Missions
     protected string $speciality;
     protected string $start_date;
     protected string $end_date;
-
+    protected string $identification_code;
+    protected string $code_name_contact;
+    protected string $code_name_target;
+    protected string $adress;
+    
+    
 
     /**
-     * Get the value of id_missions
+     * Get the value of id_mission
      */
-    public function getIdMissions(): ?int
+    public function getIdMission(): ?int
     {
-        return $this->id_missions;
+        return $this->id_mission;
     }
 
     /**
-     * Set the value of id_missions
+     * Set the value of id_mission
      */
-    public function setIdMissions(?int $id_missions): self
+    public function setIdMission(?int $id_mission): self
     {
-        $this->id_missions = $id_missions;
+        $this->id_mission = $id_mission;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of id_admin
+     */
+    public function getIdAdmin(): int
+    {
+        return $this->id_admin;
+    }
+
+    /**
+     * Set the value of id_admin
+     */
+    public function setIdAdmin(int $id_admin): self
+    {
+        $this->id_admin = $id_admin;
 
         return $this;
     }
@@ -211,6 +235,78 @@ class Missions
     public function setEndDate(string $end_date): self
     {
         $this->end_date = $end_date;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of identification_code
+     */
+    public function getIdentificationCode(): string
+    {
+        return $this->identification_code;
+    }
+
+    /**
+     * Set the value of identification_code
+     */
+    public function setIdentificationCode(string $identification_code): self
+    {
+        $this->identification_code = $identification_code;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of code_name_contact
+     */
+    public function getCodeNameContact(): string
+    {
+        return $this->code_name_contact;
+    }
+
+    /**
+     * Set the value of code_name_contact
+     */
+    public function setCodeNameContact(string $code_name_contact): self
+    {
+        $this->code_name_contact = $code_name_contact;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of code_name_target
+     */
+    public function getCodeNameTarget(): string
+    {
+        return $this->code_name_target;
+    }
+
+    /**
+     * Set the value of code_name_target
+     */
+    public function setCodeNameTarget(string $code_name_target): self
+    {
+        $this->code_name_target = $code_name_target;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of adress
+     */
+    public function getAdress(): string
+    {
+        return $this->adress;
+    }
+
+    /**
+     * Set the value of adress
+     */
+    public function setAdress(string $adress): self
+    {
+        $this->adress = $adress;
 
         return $this;
     }

@@ -22,11 +22,13 @@
             <p class="card-title"><?=$mission->getTitle(); ?></p>
             <p class="card-text"><?=$mission->getDescription(); ?></p>
             <p class="card-info">
-                Agent : Black Widow <br> 
-                Contact : DV05BI <br> 
-                Planque : 1 Chertanovskaya Ulitsa, Moskva 117208 - RUSSIE - appartement 24, 4ème étage <br> 
-                Type et spécialité : <?=$mission->getTypeOfMission()?> et <?= $mission->getSpeciality(); ?><br>
-                Début : <?=$mission->getStartDate(); ?>
+                Agent : <?=$mission->getIdentificationCode(); ?> <br> 
+                Contact : <?=$mission->getCodeNameContact(); ?> <br> 
+                Planque : <?=$mission->getAdress(); ?> <?=$mission->getCountry(); ?> <br> 
+                Type : <?=$mission->getTypeOfMission()?> <br>
+                Spécialité : <?= $mission->getSpeciality(); ?><br>
+                Date de début : <?=$mission->getStartDate(); ?> <br>
+                Date de fin  : <?=$mission->getEndDate(); ?>
             </p>
               <div class="d-flex justify-content-end align-items-center">
                 <small class="text-body-secondary"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"><?=$mission->getStatut(); ?></font></font></small>
