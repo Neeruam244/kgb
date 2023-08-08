@@ -19,6 +19,22 @@ class Controller
                         $pageController = new missionsController();
                         $pageController->route();
                         break;
+                    case 'agent':
+                        $pageController = new agentController();
+                        $pageController->route();
+                        break; 
+                    case 'contact':
+                        $pageController = new contactController();
+                        $pageController->route();
+                        break;
+                    case 'target':
+                        $pageController = new targetController();
+                        $pageController->route();
+                        break;   
+                    case 'hideout':
+                        $pageController = new hideoutController();
+                        $pageController->route();
+                        break;   
                     default : 
                         throw new \Exception("Le controleur n'existe pas");
                         break;

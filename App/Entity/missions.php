@@ -20,8 +20,6 @@ class Missions
     protected string $code_name_contact;
     protected string $code_name_target;
     protected string $adress;
-    
-    
 
     /**
      * Get the value of id_mission

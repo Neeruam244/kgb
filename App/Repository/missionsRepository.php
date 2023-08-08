@@ -19,10 +19,25 @@ class missionsRepository
         $query->bindValue(':id_mission', $id_mission, $pdo::PARAM_INT);
         $query->execute();
         $mission = $query->fetch($pdo::FETCH_ASSOC);
+        $missionEntity = new Missions();
 
-        //$mission = ['id_missions' => 1, 'title' => 'Assasinat du général Dreykov', 'description' => 'Infiltration dans le reprère de la Chambre rouge, élimination de la cible NI66R - si possible libération des veuves', 'name_code_mission' => 'AS-NI66R-2B' , 'country' => 'Russie', 'type_of_mission' => 'Assasinat', 
-        //'statut' => 'En cours', 'number_of_hideout' => 1, 'speciality' => 'assasinat', 'start_date' => '2023-08-02', 'end_date' => '']; 
+        foreach ($mission as $key => $value) {
+            $missionEntity->{'set'.StringTools::toPascalCase($key) }($value);
+        }
 
+        return $missionEntity;
+    }
+
+    public function getAllMissions()
+    {
+        //Appel BDD
+        $mysql = Mysql::getInstance();
+        
+        $pdo = $mysql->getPDO();
+        
+        $query = $pdo->prepare('SELECT * FROM missions');
+        $query->execute();
+        $mission = $query->fetch($pdo::FETCH_ASSOC);
         $missionEntity = new Missions();
 
         /*$missionEntity->setIdMission($mission['id_mission']);
@@ -41,6 +56,70 @@ class missionsRepository
         $missionEntity->setCodeNameContact($mission['code_name_contact']);
         $missionEntity->setCodeNameTarget($mission['code_name_target']);
         $missionEntity->setAdress($mission['adress']);*/
+
+        foreach ($mission as $key => $value) {
+            $missionEntity->{'set'.StringTools::toPascalCase($key) }($value);
+        }
+
+        return $missionEntity;
+    }
+
+    public function AddMission()
+    {
+        //Appel BDD
+        $mysql = Mysql::getInstance();
+        
+        $pdo = $mysql->getPDO();
+        
+        $query = $pdo->prepare('INSERT INTO missions (title, description, name_code_mission, country, type_of_mission, statut, number_of_hideout, speciality, start_date, end_date, identication_code, 
+            code_name_contact, code_name_target, id_admin, adress) VALUES (:title, :description, :name_code_mission, :country, :type_of_mission, :statut, :number_of_hideout, :speciality, :start_date, :end_date, 
+            :identication_code, :code_name_contact, :code_name_target, :id_admin, :adress)');
+
+        $query->execute();
+        $mission = $query->fetch($pdo::FETCH_ASSOC);
+        $missionEntity = new Missions();
+
+        foreach ($mission as $key => $value) {
+            $missionEntity->{'set'.StringTools::toPascalCase($key) }($value);
+        }
+
+        return $missionEntity;
+    }
+
+    public function UpdateMission(int $id_mission)
+    {
+        //Appel BDD
+        $mysql = Mysql::getInstance();
+        
+        $pdo = $mysql->getPDO();
+        
+        $query = $pdo->prepare('UPDATE missions SET title = :title, description = :description, name_code_mission = :name_code_mission, country = :country, type_of_missions = :type_of_missions,
+            statut = :statut, number_of_hideout = :number_of_hideout, speciality = :speciality, start_date = :start_date, end_date = :end_date, identication_code = :identification_code,
+            code_name_contact = :code_name_contact, code_name_target = :code_name_target, adress = :adress, id_admin = :id_admin WHERE id_mission = :id_mission");');
+        $query->bindValue(':id_mission', $id_mission, $pdo::PARAM_INT);
+        $query->execute();
+        $mission = $query->fetch($pdo::FETCH_ASSOC);
+        $missionEntity = new Missions();
+
+        foreach ($mission as $key => $value) {
+            $missionEntity->{'set'.StringTools::toPascalCase($key) }($value);
+        }
+
+        return $missionEntity;
+    }
+
+    public function DeleteMission(int $id_mission)
+    {
+        //Appel BDD
+        $mysql = Mysql::getInstance();
+        
+        $pdo = $mysql->getPDO();
+        
+        $query = $pdo->prepare('DELETE FROM missions WHERE id_mission = :id_mission');
+        $query->bindValue(':id_mission', $id_mission, $pdo::PARAM_INT);
+        $query->execute();
+        $mission = $query->fetch($pdo::FETCH_ASSOC);
+        $missionEntity = new Missions();
 
         foreach ($mission as $key => $value) {
             $missionEntity->{'set'.StringTools::toPascalCase($key) }($value);

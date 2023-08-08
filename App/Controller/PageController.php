@@ -9,10 +9,6 @@ class PageController extends Controller
         try{
             if (isset ($_GET['action'])){
                 switch ($_GET['action']) {
-                    case 'about': 
-                        // appeler la méthode about() 
-                        $this->about();
-                        break;
                     case 'home': 
                         // appeler la méthode home()
                         $this->home();
@@ -31,17 +27,6 @@ class PageController extends Controller
         }
 
         
-    }
-
-    protected function about()
-    {
-        $params = [
-            'test' => 'abc',
-            'test2' => 'abc2'
-        ];
-
-        
-        $this->render('page/about', $params);
     }
 
     protected function home()

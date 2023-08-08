@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="bootstrap.min.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/assets/CSS/override-bootstrap.css">
+    <link rel="stylesheet" href="/assets/CSS/style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KGB</title>
 </head>
@@ -19,7 +20,7 @@
       </ul>
 
       <div class="col-md-3 text-end">
-        <a href="connexion.php"><button type="button" class="btn btn-outline-secondary me-2"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Connexion</font></font></button></a>
+        <a href="connexion.php"><button type="button" class="btn btn-outline-primary me-2"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Connexion</font></font></button></a>
       </div>
     </div>
 </header>

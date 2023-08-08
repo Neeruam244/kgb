@@ -1,0 +1,43 @@
+/*  --- Page missions.php ---    */
+.card-body{
+    padding: 30px;
+}
+.card-title{
+    margin: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+}
+
+/*  --- Page login.php ---   */
+.container{
+    margin-bottom: 50px;
+}
+.contain-form{
+    width: 30%;
+}
+#title{
+    text-align: center;
+    font-size: 35px;
+    padding-bottom: 20px;
+}
+input{
+    margin: 15px;
+}
+label{
+    margin-left: 10px;
+}
+
+/*  --- Page bo admin ---   */
+.title-bo{
+    text-align: center;
+    margin-bottom: 20px;
+}
+.btndeco{
+    margin-right: 120px;
+}
+@media screen and (min-width: 1600px){
+    .btndeco{
+        margin-right: 320px;
+    }
+}
