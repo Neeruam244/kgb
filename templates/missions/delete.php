@@ -39,11 +39,6 @@
     </div>
   </div>
 
-  <!-- Bouton pour supprimer la mission -->
-  <form method="post" action="/missions/delete?id=<?=$mission->getIdMission(); ?>">
-      <button type="submit" class="btn btn-outline-danger">Supprimer</button>
-  </form>
-
 
 
 <?php  require_once _ROOTPATH_.'\templates\footer.php'; ?>

@@ -21,15 +21,15 @@ class missionsController extends Controller
                         break;
                     case 'edit': 
                         // appeler méthode edit()
-                        
+                        $this->edit();
                         break;
                     case 'add': 
-                            // appeler méthode add()
-                           
+                        // appeler méthode add()
+                        $this->add();   
                         break;
                     case 'delete': 
                         // appeler méthode delete()
-                       
+                        $this->delete();
                         break;
                     default : 
                         throw new \Exception("Cette action n'existe pas : ".$_GET['action']);
@@ -74,94 +74,111 @@ class missionsController extends Controller
     protected function list()
     {
         try{
-            if (isset($_GET['id'])) {
-
-                $id = (int)$_GET['id'];
-                // Charger la mission par un appel au repository
-                $missionsRepository = new missionsRepository();
-                $mission = $missionsRepository->getAllMissions();
+            $missionsRepository = new missionsRepository();
+            $missions = $missionsRepository->findAll();
 
 
-                $this->render('missions/list', [
-                    'mission' => $mission
-                ]);
-            } else {
-                throw new \Exception("L'id est manquant");
-            }
+            $this->render('missions/list', [
+                'missions' => $missions
+            ]);
+            
         } catch(\Exception $e) {
             $this->render('errors/default', [
                 'error' => $e->getMessage()
             ]);
         }  
     }
+    
     protected function add()
     {
-        try{
-            if (isset($_GET['id'])) {
-
-                $id = (int)$_GET['id'];
-                // Charger la mission par un appel au repository
+        try {
+            // Vérifier si des données POST ont été soumises
+            if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+                // Récupérer les données du formulaire
+                $missionData = $_POST;
+            
+                // Valider et traiter les données si nécessaire
+            
+                // Enregistrer la nouvelle mission en appelant le repository
                 $missionsRepository = new missionsRepository();
-                $mission = $missionsRepository->AddMission();
+                $newMissionId = $missionsRepository->AddMission($missionData);
 
-
-                $this->render('missions/add', [
-                    'mission' => $mission
-                ]);
+                // Rediriger vers la page de détails de la nouvelle mission
+                header("Location: /missions/show?id=$newMissionId");
+                exit;
             } else {
-                throw new \Exception("L'id est manquant");
+                // Afficher le formulaire d'ajout
+                $this->render('missions/add');
             }
-        } catch(\Exception $e) {
-            $this->render('errors/default', [
-                'error' => $e->getMessage()
-            ]);
-        }  
+            } catch (\Exception $e) {
+                $this->render('errors/default', [
+                    'error' => $e->getMessage()
+                ]);
+            }
     }
+
+    
     protected function edit()
     {
-        try{
+        try {
             if (isset($_GET['id'])) {
-
                 $id = (int)$_GET['id'];
-                // Charger la mission par un appel au repository
+
+                // Charger la mission à modifier
                 $missionsRepository = new missionsRepository();
-                $mission = $missionsRepository->UpdateMission($id);
+                $mission = $missionsRepository->findOneById($id);
 
+                // Vérifier si des données POST ont été soumises
+                if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+                    // Récupérer les données du formulaire
+                    $missionData = $_POST;
 
+                    // Valider et traiter les données si nécessaire
+                
+                    // Mettre à jour la mission en appelant le repository
+                    $missionsRepository->UpdateMission($id, $missionData);
+
+                    // Rediriger vers la page de détails de la mission mise à jour
+                    header("Location: /missions/show?id=$id");
+                    exit;
+            } else {
+                // Afficher le formulaire de modification
                 $this->render('missions/edit', [
                     'mission' => $mission
                 ]);
+            }
             } else {
                 throw new \Exception("L'id est manquant");
             }
-        } catch(\Exception $e) {
+        } catch (\Exception $e) {
             $this->render('errors/default', [
                 'error' => $e->getMessage()
             ]);
-        }  
+        }
     }
+
+
     protected function delete()
     {
-        try{
+        try {
             if (isset($_GET['id'])) {
-
                 $id = (int)$_GET['id'];
-                // Charger la mission par un appel au repository
+
+                // Supprimer la mission en appelant le repository
                 $missionsRepository = new missionsRepository();
-                $mission = $missionsRepository->DeleteMission($id);
+                $missionsRepository->deleteMission($id);
 
-
-                $this->render('missions/delete', [
-                    'mission' => $mission
-                ]);
+                // Rediriger vers la liste des missions après suppression
+                header("Location: /missions/list");
+                exit;
             } else {
                 throw new \Exception("L'id est manquant");
             }
-        } catch(\Exception $e) {
+        } catch (\Exception $e) {
             $this->render('errors/default', [
                 'error' => $e->getMessage()
             ]);
-        }  
+        }
     }
 }
 

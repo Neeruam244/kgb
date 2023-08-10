@@ -34,7 +34,15 @@ class Controller
                     case 'hideout':
                         $pageController = new hideoutController();
                         $pageController->route();
-                        break;   
+                        break; 
+                    case 'statut':
+                        $pageController = new statutController();
+                        $pageController->route();
+                        break;  
+                    case 'admin':
+                        $pageController = new adminController();
+                        $pageController->route();
+                        break; 
                     default : 
                         throw new \Exception("Le controleur n'existe pas");
                         break;

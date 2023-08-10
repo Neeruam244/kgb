@@ -1,10 +1,9 @@
-<?php  require_once _ROOTPATH_.'\templates\header.php'; 
-/* @var $mission \App\Entity\Missions */
-?>
+<?php  require_once _ROOTPATH_.'\templates\header.php'; ?>
 
 <h2 class="ms-5">Liste des missions</h2>
+    
     <div class="table-responsive">
-        <table class="w-75 m-5 p-5 table table-bordered text-center align-middle">
+        <table class="w-75 m-4 table table-bordered text-center align-middle">
             <thead class="align-middle">
                 <tr>
                     <th scope="col" >ID</th>
@@ -25,30 +24,26 @@
                 </tr>
             </thead>
             <tbody class="table-group-divider">
-                <tr>
-                    <th scope="row"><?=$mission->getIdMission(); ?></th>
-                        <td><?=$mission->getTitle(); ?></td>
-                        <td><?=$mission->getDescription(); ?></td>
-                        <td><?=$mission->getNameCodeMission(); ?></td>
-                        <td><?=$mission->getNumberOfHideout(); ?></td>
-                        <td><?=$mission->getAdress(); ?></td>
-                        <td><?=$mission->getCountry(); ?></td>
-                        <td><?=$mission->getSpeciality(); ?></td>
-                        <td><?=$mission->getStatut(); ?></td>
-                        <td><?=$mission->getStartDate(); ?></td>
-                        <td><?=$mission->getEndDate(); ?></td>
-                        <td><?=$mission->getIdAdmin(); ?></td>
-                        <td><?=$mission->getIdentificationCode(); ?></td>
-                        <td><?=$mission->getCodeNameContact(); ?></td>
-                        <td><?=$mission->getCodeNameTarget(); ?></td>
-                </tr>
+                <tr> 
+                    <?php foreach ($missions as $m) : ?>
+                <th scope="row"><?=$m['id_mission']; ?></th>
+                        <td><?=$m['title']; ?></td>
+                        <td><?=$m['description']; ?></td>
+                        <td><?=$m['name_code_mission']; ?></td>
+                        <td><?=$m['number_of_hideout']; ?></td>
+                        <td><?=$m['adress']; ?></td>
+                        <td><?=$m['country']; ?></td>
+                        <td><?=$m['speciality']; ?></td>
+                        <td><?=$m['statut']; ?></td>
+                        <td><?=$m['start_date']; ?></td>
+                        <td><?=$m['end_date']; ?></td>
+                        <td><?=$m['id_admin']; ?></td>
+                        <td><?=$m['identification_code']; ?></td>
+                        <td><?=$m['code_name_contact']; ?></td>
+                        <td><?=$m['code_name_target']; ?></td> 
+                </tr> 
+                    <?php endforeach; ?>
             </tbody>
         </table>
     </div>
-
-        
-
-
 <?php  require_once _ROOTPATH_.'\templates\footer.php'; ?>
-
-

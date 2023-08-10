@@ -7,7 +7,7 @@
       </div>
       <div class="col-lg-6">
         <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3">КГБ, Комитет государственной безопасности</h1>
-        <p class="lead">Quickly design and customize responsive mobile-first sites with Bootstrap, the world’s most popular front-end open source toolkit, featuring Sass variables and mixins, responsive grid system, extensive prebuilt components, and powerful JavaScript plugins.</p>
+        <p class="lead">Le Comité pour la sécurité de l'État, est le principal service de renseignements de l'URSS post-stalinienne, où il avait notamment la fonction de police politique.</p>
       </div>
     </div>
   </div>

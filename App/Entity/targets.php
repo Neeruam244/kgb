@@ -2,7 +2,7 @@
 
 namespace App\Entity;
 
-class Targets extends Infos {
+class Targets {
     protected ?int $id_target = null;
     protected string $last_name;
     protected string $first_name;

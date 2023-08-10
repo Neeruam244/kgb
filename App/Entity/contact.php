@@ -3,7 +3,7 @@
 namespace App\Entity;
 
 
-class Contact extends Infos {
+class Contact {
     protected ?int $id_contact = null;
     protected string $last_name;
     protected string $first_name;
