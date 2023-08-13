@@ -11,8 +11,6 @@ class Agent {
     protected string $identification_code;
     protected string $specialities;
 
-    
-
     /**
      * Get the value of id_agent
      */

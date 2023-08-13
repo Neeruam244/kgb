@@ -23,6 +23,10 @@ class adminController extends Controller
                         // appeler méthode connexion()
                         $this->connexion();
                         break;
+                    case 'bo_admin': 
+                        // appeler méthode bo_admin()
+                        $this->bo_admin();
+                        break;
                     default : 
                         throw new \Exception("Cette action n'existe pas : ".$_GET['action']);
                         break;

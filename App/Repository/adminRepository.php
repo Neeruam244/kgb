@@ -3,6 +3,7 @@
 namespace App\Repository; 
 
 use App\Entity\Administrator;
+
 use App\Db\Mysql;
 use App\Tools\StringTools;
 
@@ -43,7 +44,28 @@ class adminRepository
         $query->execute();
     }
 
-    public function findByEmailAndPassword(string $email, string $password)
+    public function connexionTo ()
+    {
+        //Appel BDD
+        $mysql = Mysql::getInstance();
+        $pdo = $mysql->getPDO();
+
+        $query = $pdo->prepare("SELECT * FROM administrator WHERE email = :email AND password = :password");
+        $query->bindParam(':email', $email, $pdo::PARAM_STR);
+        $query->bindParam(':password', $password, $pdo::PARAM_STR);
+        $query->execute();
+        $user = $query->fetch();
+
+        if ($user && password_verify($password, $user['password'])) {
+            return $user;
+        } else {
+            return false;
+        }
+    }
+
+}
+
+/* public function findByEmailAndPassword(string $email, string $password)
     {
         //Appel BDD
         $mysql = Mysql::getInstance();
@@ -75,23 +97,4 @@ class adminRepository
         }
 
     }
-
-    public function connexionTo ()
-    {
-        //Appel BDD
-        $mysql = Mysql::getInstance();
-        $pdo = $mysql->getPDO();
-
-        $query = $pdo->prepare("SELECT * FROM administrator WHERE email = :email AND password = :password");
-        $query->bindParam(':email', $email, $pdo::PARAM_STR);
-        $query->bindParam(':password', $password, $pdo::PARAM_STR);
-        $query->execute();
-        $user = $query->fetch();
-
-        if ($user && password_verify($password, $user['password'])) {
-            return $user;
-        } else {
-            return false;
-        }
-    }
-}
+*/
