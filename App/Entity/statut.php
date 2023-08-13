@@ -5,11 +5,11 @@ namespace App\Entity;
 class Statut 
 {
     protected ?int $id_statut = null;
-    protected string $in_preparation;
-    protected string $in_progress;
-    protected string $ended;
-    protected string $failure;
-    protected string $id_missions;
+    protected ?string $in_preparation = null;
+    protected ?string $in_progress = null ;
+    protected ?string $ended = null ;
+    protected ?string $failure = null;
+    protected string $name_code_missions;
 
     
 
@@ -34,7 +34,7 @@ class Statut
     /**
      * Get the value of in_preparation
      */
-    public function getInPreparation(): string
+    public function getInPreparation(): ?string
     {
         return $this->in_preparation;
     }
@@ -42,7 +42,7 @@ class Statut
     /**
      * Set the value of in_preparation
      */
-    public function setInPreparation(string $in_preparation): self
+    public function setInPreparation(?string $in_preparation): self
     {
         $this->in_preparation = $in_preparation;
 
@@ -52,7 +52,7 @@ class Statut
     /**
      * Get the value of in_progress
      */
-    public function getInProgress(): string
+    public function getInProgress(): ?string
     {
         return $this->in_progress;
     }
@@ -60,7 +60,7 @@ class Statut
     /**
      * Set the value of in_progress
      */
-    public function setInProgress(string $in_progress): self
+    public function setInProgress(?string $in_progress): self
     {
         $this->in_progress = $in_progress;
 
@@ -70,7 +70,7 @@ class Statut
     /**
      * Get the value of ended
      */
-    public function getEnded(): string
+    public function getEnded(): ?string
     {
         return $this->ended;
     }
@@ -78,7 +78,7 @@ class Statut
     /**
      * Set the value of ended
      */
-    public function setEnded(string $ended): self
+    public function setEnded(?string $ended): self
     {
         $this->ended = $ended;
 
@@ -88,7 +88,7 @@ class Statut
     /**
      * Get the value of failure
      */
-    public function getFailure(): string
+    public function getFailure(): ?string
     {
         return $this->failure;
     }
@@ -96,7 +96,7 @@ class Statut
     /**
      * Set the value of failure
      */
-    public function setFailure(string $failure): self
+    public function setFailure(?string $failure): self
     {
         $this->failure = $failure;
 
@@ -104,19 +104,19 @@ class Statut
     }
 
     /**
-     * Get the value of id_missions
+     * Get the value of name_code_missions
      */
-    public function getIdMissions(): string
+    public function getNameCodeMissions(): string
     {
-        return $this->id_missions;
+        return $this->name_code_missions;
     }
 
     /**
-     * Set the value of id_missions
+     * Set the value of name_code_missions
      */
-    public function setIdMissions(string $id_missions): self
+    public function setNameCodeMissions(string $name_code_missions): self
     {
-        $this->id_missions = $id_missions;
+        $this->name_code_missions = $name_code_missions;
 
         return $this;
     }

@@ -19,7 +19,7 @@
       <div class="col d-flex flex-column align-items-start gap-2">
         <h2 class="fw-bold text-body-emphasis">Missions en cours </h2>
         <p class="text-body-secondary">Pour voir la totalité des missions, merci de cliquer sur le lien ci-dessous</p>
-        <a href="#" class="btn btn-primary btn-lg">Cliquer ici</a>
+        <a href="index.php?controller=missions&action=list" class="btn btn-primary btn-lg">Cliquer ici</a>
       </div>
 
       <div class="col">
@@ -32,7 +32,7 @@
             </div>
             <h4 class="fw-semibold mb-0 text-body-emphasis">Assasinat du général Dreykov</h4>
             <p class="text-body-secondary">Infiltration dans le reprère de la Chambre rouge, élimination de la cible NI66R - si possible libération des veuves</p>
-            <a href="#" class="icon-link">Détail de la mission</a>
+            <a href="index.php?controller=missions&action=show&id=2" class="icon-link">Détail de la mission</a>
           </div>
 
           <div class="col d-flex flex-column gap-2">
@@ -44,7 +44,7 @@
             </div>
             <h4 class="fw-semibold mb-0 text-body-emphasis">Espionnage de Ergorov</h4>
             <p class="text-body-secondary">Surveillance de la cible en vue d'un futur assasinat</p>
-            <a href="#" class="icon-link">Détail de la mission</a>
+            <a href="index.php?controller=missions&action=show&id=5" class="icon-link">Détail de la mission</a>
           </div>
 
 <?php  require_once _ROOTPATH_.'\templates\footer.php'; ?>

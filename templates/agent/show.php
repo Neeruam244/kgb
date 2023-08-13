@@ -8,28 +8,31 @@
 </div>
 
 <table class="w-75 m-5 p-5 table table-bordered text-center align-middle">
-            <thead>
-                <tr>
-                    <th scope="col" >ID</th>
-                    <th scope="col" >Nom</th>
-                    <th scope="col" >Prénom</th>
-                    <th scope="col" >Date de naissance</th>
-                    <th scope="col" >Nationalité</th>
-                    <th scope="col" >Code d'identification</th>
-                    <th scope="col" >Spécialités</th>
-                </tr>
-            </thead>
-            <tbody class="table-group-divider">
-                <tr>
-                    <th scope="row"><?=$agent->getIdAgent(); ?></th>
-                        <td><?=$agent->getLastName(); ?></td>
-                        <td><?=$agent->getFirstName(); ?></td>
-                        <td><?=$agent->getDateOfBirth(); ?></td>
-                        <td><?=$agent->getNationality(); ?></td>
-                        <td><?=$agent->getIdentificationCode(); ?></td>
-                        <td><?=$agent->getSpecialities(); ?></td>
-                </tr>
-            </tbody>
+    <thead>
+        <tr>
+            <th scope="col" >ID</th>
+            <th scope="col" >Nom</th>
+            <th scope="col" >Prénom</th>
+            <th scope="col" >Date de naissance</th>
+            <th scope="col" >Nationalité</th>
+            <th scope="col" >Code d'identification</th>
+            <th scope="col" >Spécialités</th>
+        </tr>
+    </thead>
+    <tbody class="table-group-divider">
+            <tr>
+                <th scope="row"><?=$agent->getIdAgent(); ?></th>
+                <td><?=$agent->getLastName(); ?></td>
+                <td><?=$agent->getFirstName(); ?></td>
+                <td><?=$agent->getDateOfBirth(); ?></td>
+                <td><?=$agent->getNationality(); ?></td>
+                <td><?=$agent->getIdentificationCode(); ?></td>
+                <td><?=$agent->getSpecialities(); ?></td>
+            </tr>
+    </tbody>
 </table>
+
+<!-- Bouton pour supprimer la mission -->
+<a href="/agent/delete?id=<?php $agent->getIdAgent(); ?>" onclick="return confirm('Voulez-vous vraiment supprimer cet agent ?')" class="btn btn-outline-danger">Supprimer</a>
 
 <?php  require_once _ROOTPATH_.'\templates\footer.php'; ?>

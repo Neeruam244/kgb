@@ -8,7 +8,7 @@
 
     <ul class="nav col-md-4 justify-content-end">
       <li class="nav-item"><a href="index.php" class="nav-link px-2 text-body-secondary"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Accueil</font></font></a></li>
-      <li class="nav-item"><a href="missions.php" class="nav-link px-2 text-body-secondary"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Missions</font></font></a></li>
+      <li class="nav-item"><a href="index.php?controller=missions&action=list" class="nav-link px-2 text-body-secondary"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Missions</font></font></a></li>
     </ul>
 </div>
 </footer>

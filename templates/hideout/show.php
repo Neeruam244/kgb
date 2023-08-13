@@ -26,4 +26,7 @@
             </tbody>
 </table>
 
+    <!-- Bouton pour supprimer la mission -->
+    <a href="/hideout/delete?id=<?php $hideout->getIdHideout(); ?>" onclick="return confirm('Voulez-vous vraiment supprimer cette planque ?')" class="btn btn-outline-danger">Supprimer</a>
+
 <?php  require_once _ROOTPATH_.'\templates\footer.php'; ?>

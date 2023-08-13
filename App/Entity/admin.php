@@ -7,12 +7,11 @@ class Administrator
     protected ?int $id_admin = null;
     protected string $last_name;
     protected string $first_name;
-    protected string $mail;
+    protected string $email;
     protected string $password;
     protected string $creation_date;
 
     
-
 
     /**
      * Get the value of id_admin
@@ -69,19 +68,19 @@ class Administrator
     }
 
     /**
-     * Get the value of mail
+     * Get the value of email
      */
-    public function getMail(): string
+    public function getEmail(): string
     {
-        return $this->mail;
+        return $this->email;
     }
 
     /**
-     * Set the value of mail
+     * Set the value of email
      */
-    public function setMail(string $mail): self
+    public function setEmail(string $email): self
     {
-        $this->mail = $mail;
+        $this->email = $email;
 
         return $this;
     }

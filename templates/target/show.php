@@ -30,4 +30,7 @@
             </tbody>
 </table>
 
+    <!-- Bouton pour supprimer la mission -->
+    <a href="/target/delete?id=<?php $target->getIdtarget(); ?>" onclick="return confirm('Voulez-vous vraiment supprimer cette cible ?')" class="btn btn-outline-danger">Supprimer</a>
+
 <?php  require_once _ROOTPATH_.'\templates\footer.php'; ?>

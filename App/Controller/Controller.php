@@ -15,7 +15,6 @@ class Controller
                         $pageController->route();
                         break;
                     case 'missions': 
-                        // charger le controller missions
                         $pageController = new missionsController();
                         $pageController->route();
                         break;
@@ -42,7 +41,7 @@ class Controller
                     case 'admin':
                         $pageController = new adminController();
                         $pageController->route();
-                        break; 
+                        break;
                     default : 
                         throw new \Exception("Le controleur n'existe pas");
                         break;
@@ -59,6 +58,7 @@ class Controller
         }
        
     }
+
     protected function render(string $path, array $params = []): void
     {
         $filePath = _ROOTPATH_.'/templates/'.$path.'.php';
@@ -78,6 +78,7 @@ class Controller
             ]);
         }
     }
+
 }
 
 //router : analyse l'url et la renvoie vers tel ou tel controller 

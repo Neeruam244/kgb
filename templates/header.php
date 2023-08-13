@@ -16,11 +16,11 @@
 
       <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
         <li><a href="index.php" class="nav-link px-2 link-secondary"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Accueil</font></font></a></li>
-        <li><a href="missions.php" class="nav-link px-2"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Missions</font></font></a></li>
+        <li><a href="index.php?controller=missions&action=list" class="nav-link px-2"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Liste des missions</font></font></a></li>
       </ul>
 
       <div class="col-md-3 text-end">
-        <a href="connexion.php"><button type="button" class="btn btn-outline-primary me-2"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Connexion</font></font></button></a>
+        <a href="index.php?controller=admin&action=connexion"><button type="button" class="btn btn-outline-primary me-2"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Connexion</font></font></button></a>
       </div>
     </div>
 </header>

@@ -30,4 +30,7 @@
             </tbody>
 </table>
 
+    <!-- Bouton pour supprimer la mission -->
+    <a href="/contact/delete?id=<?php $contact->getIdContact(); ?>" onclick="return confirm('Voulez-vous vraiment supprimer ce contact ?')" class="btn btn-outline-danger">Supprimer</a>
+
 <?php  require_once _ROOTPATH_.'\templates\footer.php'; ?>

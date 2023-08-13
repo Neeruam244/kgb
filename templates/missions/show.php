@@ -39,10 +39,8 @@
     </div>
   </div>
 
-  <!-- Bouton pour supprimer la mission -->
-  <form method="post" action="/missions/delete?id=<?=$mission->getIdMission(); ?>">
-      <button type="submit" class="btn btn-outline-danger">Supprimer</button>
-  </form>
+    <!-- Bouton pour supprimer la mission -->
+    <a href="/missions/delete?id=<?php $mission->getIdMission(); ?>" onclick="return confirm('Voulez-vous vraiment supprimer cette mission ?')" class="btn btn-outline-danger">Supprimer</a>
 
 
 
